@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Editor Portal | REVA Photography Studio</title>
+
+    <link rel="stylesheet" href="editor.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-camera">
+                <i class="fa-solid fa-camera"></i>
+            </div>
+
+            <div>
+                <h1>REVA</h1>
+                <span>PHOTOGRAPHY STUDIO</span>
+            </div>
+        </div>
+
+
+        <div class="sidebar-line"></div>
+
+
+        <!-- Profile -->
+
+        <div class="side-profile">
+
+            <div class="profile-circle">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <h3>Editor</h3>
+            <p>Professional Editor</p>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="navigation">
+
+            <a href="#" class="nav-link active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Job Queue</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fa-regular fa-images"></i>
+                <span>Gallery</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+
+        <div class="bottom-menu">
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- TOP HEADER -->
+
+        <header class="top-header">
+
+            <div class="page-heading">
+
+                <span class="small-title">EDITOR PORTAL</span>
+
+                <h2>Dashboard</h2>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                    <span>2</span>
+                </div>
+
+                <div class="user-info">
+
+                    <div class="user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+                        <strong>Editor</strong>
+                        <small>Professional Editor</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= STAT CARDS ================= -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+
+                <div class="stat-content">
+                    <span>ASSIGNED JOBS</span>
+                    <strong>08</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div class="stat-content">
+                    <span>IN PROGRESS</span>
+                    <strong>05</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-regular fa-images"></i>
+                </div>
+
+                <div class="stat-content">
+                    <span>UPLOADED MEDIA</span>
+                    <strong>128</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="stat-content">
+                    <span>COMPLETED</span>
+                    <strong>12</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DASHBOARD GRID ================= -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- ================= JOB QUEUE ================= -->
+
+            <div class="panel job-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span>WORK QUEUE</span>
+                        <h2>Assigned Jobs</h2>
+                    </div>
+
+                    <button class="gold-button">
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div class="job-list">
+
+
+                    <div class="job">
+
+                        <div class="job-icon wedding">
+                            <i class="fa-solid fa-ring"></i>
+                        </div>
+
+                        <div class="job-info">
+
+                            <h3>Wedding Album</h3>
+
+                            <p>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Kolhapur
+                            </p>
+
+                        </div>
+
+                        <div class="job-status progress">
+                            In Progress
+                        </div>
+
+                    </div>
+
+
+                    <div class="job">
+
+                        <div class="job-icon birthday">
+                            <i class="fa-solid fa-cake-candles"></i>
+                        </div>
+
+                        <div class="job-info">
+
+                            <h3>Birthday Event</h3>
+
+                            <p>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Sangli
+                            </p>
+
+                        </div>
+
+                        <div class="job-status pending">
+                            Pending
+                        </div>
+
+                    </div>
+
+
+                    <div class="job">
+
+                        <div class="job-icon corporate">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+
+                        <div class="job-info">
+
+                            <h3>Corporate Shoot</h3>
+
+                            <p>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Pune
+                            </p>
+
+                        </div>
+
+                        <div class="job-status completed">
+                            Completed
+                        </div>
+
+                    </div>
+
+
+                    <div class="job">
+
+                        <div class="job-icon wedding">
+                            <i class="fa-solid fa-ring"></i>
+                        </div>
+
+                        <div class="job-info">
+
+                            <h3>Pre-Wedding</h3>
+
+                            <p>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Goa
+                            </p>
+
+                        </div>
+
+                        <div class="job-status progress">
+                            In Progress
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= PROJECT STATUS ================= -->
+
+            <div class="panel status-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span>PROJECT STATUS</span>
+                        <h2>Current Status</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="status-box">
+
+                    <div class="status-item">
+
+                        <div class="status-left">
+
+                            <span class="status-dot yellow"></span>
+
+                            <span>In Progress</span>
+
+                        </div>
+
+                        <strong>05</strong>
+
+                    </div>
+
+
+                    <div class="status-item">
+
+                        <div class="status-left">
+
+                            <span class="status-dot green"></span>
+
+                            <span>Completed</span>
+
+                        </div>
+
+                        <strong>12</strong>
+
+                    </div>
+
+
+                    <div class="status-item">
+
+                        <div class="status-left">
+
+                            <span class="status-dot blue"></span>
+
+                            <span>Pending</span>
+
+                        </div>
+
+                        <strong>03</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="progress-section">
+
+                    <div class="progress-title">
+
+                        <span>Overall Progress</span>
+
+                        <strong>72%</strong>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div class="progress-fill"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= CALENDAR ================= -->
+
+            <div class="panel calendar-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span>SCHEDULE</span>
+                        <h2>October 2026</h2>
+                    </div>
+
+                    <button class="month-button">
+                        October 2026
+                    </button>
+
+                </div>
+
+
+                <div class="calendar">
+
+                    <div class="weekdays">
+
+                        <span>MON</span>
+                        <span>TUE</span>
+                        <span>WED</span>
+                        <span>THU</span>
+                        <span>FRI</span>
+                        <span>SAT</span>
+                        <span>SUN</span>
+
+                    </div>
+
+
+                    <div class="days">
+
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+
+                        <span>8</span>
+                        <span>9</span>
+                        <span class="today">10</span>
+                        <span>11</span>
+                        <span>12</span>
+                        <span>13</span>
+                        <span>14</span>
+
+                        <span>15</span>
+                        <span>16</span>
+                        <span>17</span>
+                        <span>18</span>
+                        <span>19</span>
+                        <span>20</span>
+                        <span>21</span>
+
+                        <span>22</span>
+                        <span>23</span>
+                        <span>24</span>
+                        <span>25</span>
+                        <span>26</span>
+                        <span class="event-day">27</span>
+                        <span>28</span>
+
+                        <span>29</span>
+                        <span>30</span>
+                        <span>31</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= ASSIGNMENT DETAILS ================= -->
+
+            <div class="panel assignment-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span>CURRENT ASSIGNMENT</span>
+                        <h2>Assignment Details</h2>
+                    </div>
+
+                    <span class="assigned-badge">
+                        Assigned
+                    </span>
+
+                </div>
+
+
+                <div class="details">
+
+                    <div class="detail-row">
+
+                        <span>Job Code</span>
+
+                        <strong>ED-300-002</strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>Event Type</span>
+
+                        <strong>Wedding</strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>Client</span>
+
+                        <strong>Rahul & Priya</strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>Venue</span>
+
+                        <strong>Kolhapur</strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>Due Date</span>
+
+                        <strong>27 Oct 2026</strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Team -->
+
+                <div class="team">
+
+                    <h3>Team Members</h3>
+
+                    <div class="team-members">
+
+                        <div class="member">
+
+                            <div class="member-icon">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+
+                            <span>Photographer</span>
+
+                        </div>
+
+
+                        <div class="member">
+
+                            <div class="member-icon">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+
+                            <span>Assistant</span>
+
+                        </div>
+
+
+                        <div class="member">
+
+                            <div class="member-icon">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+
+                            <span>Editor</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Upload -->
+
+                <div class="upload-section">
+
+                    <div class="upload-title">
+
+                        <h3>Edited Media</h3>
+
+                        <span>Upload photos/videos</span>
+
+                    </div>
+
+
+                    <label class="upload-box">
+
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                        <strong>Upload Edited Media</strong>
+
+                        <small>
+                            Drag & drop or select files
+                        </small>
+
+                        <input type="file" multiple>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+</body>
+</html>

@@ -1,40 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Reva Photography Studio</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-<div class="login-box">
+    <div class="login-page">
 
-    <h3>LOGIN</h3>
+        <!-- LEFT SIDE -->
+        <div class="login-left">
 
-    <label>Enter Your Username:</label>
-    <input type="text" placeholder="Enter username">
+            <div class="brand">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
 
-    <label>Enter Password:</label>
-    <input type="password" placeholder="Enter password">
+                <h1>REVA</h1>
+                <p>PHOTOGRAPHY STUDIO</p>
+            </div>
 
-    <div class="remember">
-        <input type="checkbox">
-        <span>Remember me</span>
+            <div class="left-content">
+                <span>CAPTURE • CREATE • REMEMBER</span>
+
+                <h2>
+                    Your Moments.<br>
+                    <em>Our Lens.</em>
+                </h2>
+
+                <p>
+                    Welcome to Reva Photography Studio.
+                    Manage your bookings, events and memories
+                    from one place.
+                </p>
+            </div>
+
+            <div class="copyright">
+                © 2026 Reva Photography Studio
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="login-right">
+
+            <div class="login-card">
+
+                <div class="profile-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="login-title">
+                    <span>WELCOME BACK</span>
+                    <h2>Login</h2>
+                    <p>Access your photography studio account</p>
+                </div>
+
+
+                <form>
+
+                    <!-- EMAIL -->
+                    <div class="input-group">
+                        <label>Email Address</label>
+
+                        <div class="input-box">
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input type="email"
+                                   placeholder="Enter your email"
+                                   required>
+                        </div>
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="input-group">
+                        <label>Password</label>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input type="password"
+                                   id="password"
+                                   placeholder="Enter your password"
+                                   required>
+
+                            <i class="fa-regular fa-eye eye"
+                               onclick="togglePassword()"></i>
+                        </div>
+                    </div>
+
+
+                    <!-- OPTIONS -->
+                    <div class="login-options">
+
+                        <label class="remember">
+                            <input type="checkbox">
+                            Remember me
+                        </label>
+
+                        <a href="#">Forgot Password?</a>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+                    <button type="submit" class="login-btn">
+                        LOGIN
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+
+                <p class="signup-text">
+                    Don't have an account?
+                    <a href="#">Create Account</a>
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <!-- Login Button -->
-    <button type="submit">LOGIN</button>
 
-    <!-- Other Buttons -->
-    <button type="button">SIGN UP</button>
+    <script>
 
-    <button type="button">CANCEL</button>
+        function togglePassword() {
 
-    <a href="#">Forgot Password?</a>
+            const password =
+                document.getElementById("password");
 
-    <p>Don't have account? <a href="#">Create Account</a></p>
+            if (password.type === "password") {
+                password.type = "text";
+            } else {
+                password.type = "password";
+            }
+        }
 
-</div>
+    </script>
 
 </body>
 </html>
