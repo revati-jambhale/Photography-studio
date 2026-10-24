@@ -1292,4 +1292,6 @@ app.delete("/api/packages/:id", async (req, res) => {
         });
     }
 });
-
+app.listen(5500, () => {
+    console.log(`Server running at http://localhost:5500`);
+});
