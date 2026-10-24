@@ -134,7 +134,7 @@
 
                 <div>
                     <span>ASSIGNED EVENTS</span>
-                    <h2>08</h2>
+                    <h2 id="assignedCount">08</h2>
                 </div>
 
             </div>
@@ -148,7 +148,7 @@
 
                 <div>
                     <span>UPCOMING EVENTS</span>
-                    <h2>05</h2>
+                    <h2 id="upcomingCount">05</h2>
                 </div>
 
             </div>
@@ -162,7 +162,7 @@
 
                 <div>
                     <span>UPLOADED MEDIA</span>
-                    <h2>128</h2>
+                    <h2 id="uploadedCount">20</h2>
                 </div>
 
             </div>
@@ -176,7 +176,7 @@
 
                 <div>
                     <span>COMPLETED</span>
-                    <h2>12</h2>
+                    <h2 id="completedCount">12</h2>
                 </div>
 
             </div>
@@ -200,8 +200,9 @@
                         <h2>Daily Schedule</h2>
                     </div>
 
-                    <button class="today-btn">
-                        October 2026
+                    <button class="today-btn"
+                    id="calendarMonth">
+                      October 2026
                     </button>
 
                 </div>
@@ -220,7 +221,7 @@
                     </div>
 
 
-                    <div class="days">
+                    <div class="days" id="calendarDays">
 
                         <span>1</span>
                         <span>2</span>
@@ -276,10 +277,9 @@
                         <h2>Assignment Details</h2>
                     </div>
 
-                    <span class="status">
+                   <span class="status" id="detailStatus">
                         Assigned
-                    </span>
-
+                   </span>
                 </div>
 
 
@@ -287,30 +287,27 @@
 
                     <div class="detail-row">
                         <span>Event Code</span>
-                        <strong>300-0002</strong>
+                        <strong id="detailEventCode">300-0002</strong>
                     </div>
 
                     <div class="detail-row">
                         <span>Event Type</span>
-                        <strong>Wedding</strong>
+                        <strong id="detailEventType">Wedding</strong>
                     </div>
 
                     <div class="detail-row">
                         <span>Team</span>
-                        <strong>Team A</strong>
+                       <strong id="detailTeam">Team A</strong>
                     </div>
 
                     <div class="detail-row">
                         <span>Venue</span>
-                        <strong>Kolhapur</strong>
+                       <strong id="detailVenue">Kolhapur</strong>
                     </div>
 
                     <div class="detail-row">
-                        <span>Event Date</span>
-                        <strong>27 Oct 2026</strong>
+                        <strong id="detailEventDate">27 Oct 2026</strong>
                     </div>
-
-                </div>
 
 
                 <!-- TEAM -->
@@ -473,6 +470,6 @@
     </main>
 
 </div>
-
+<script src="photographer.js"></script>
 </body>
 </html>

@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+}
+
+:root {
+    --gold: #c29a43;
+}
+
+.register-container {
+    min-height: 100vh;
+    display: flex;
+}
+
+.register-left {
+    width: 40%;
+    background: #090909;
+    padding: 55px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register-left h1 {
+    letter-spacing: 5px;
+    margin-bottom: 8px;
+}
+
+span {
+    color: var(--gold);
+}
+
+.tagline,
+.subtitle {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.register-left h2 {
+    font-size: 38px;
+    line-height: 1.3;
+    margin: 45px 0 20px;
+}
+
+.register-left > p:not(.tagline) {
+    color: #bbb;
+    line-height: 1.8;
+}
+
+.back-home {
+    color: var(--gold);
+    text-decoration: none;
+    margin-top: 35px;
+}
+
+.register-right {
+    width: 60%;
+    background: #171717;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 25px;
+}
+
+.register-card {
+    width: 100%;
+    max-width: 440px;
+}
+
+.register-card h2 {
+    font-size: 32px;
+    margin: 12px 0;
+}
+
+.description {
+    color: #aaa;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+
+form label {
+    display: block;
+    font-size: 12px;
+    margin: 15px 0 7px;
+    color: #ddd;
+}
+
+form input {
+    width: 100%;
+    height: 45px;
+    background: #222;
+    color: #fff;
+    border: 1px solid #494033;
+    padding: 0 12px;
+    outline: none;
+    border-radius: 3px;
+}
+
+form input:focus {
+    border-color: var(--gold);
+}
+
+form button {
+    width: 100%;
+    height: 48px;
+    margin-top: 25px;
+    border: none;
+    background: var(--gold);
+    color: #111;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #d6b45f;
+}
+
+.login-link {
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 22px;
+}
+
+.login-link a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 800px) {
+    .register-container {
+        flex-direction: column;
+    }
+
+    .register-left,
+    .register-right {
+        width: 100%;
+    }
+
+    .register-left {
+        padding: 35px 25px;
+    }
+
+    .register-left h2 {
+        font-size: 30px;
+        margin: 25px 0 15px;
+    }
+}
+/* Role Dropdown - Black & Gold */
+
+#role {
+    width: 100%;
+    padding: 13px 15px;
+    margin-top: 8px;
+    margin-bottom: 18px;
+
+    background-color: #111;
+    color: #d4af37;
+
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+#role:focus {
+    border-color: #f5d76e;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.35);
+}
+
+#role option {
+    background-color: #111;
+    color: #d4af37;
+    padding: 10px;
+}
+
+label[for="role"] {
+    display: block;
+    color: #d4af37;
+    font-weight: 600;
+    margin-top: 10px;
+}

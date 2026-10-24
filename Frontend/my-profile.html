@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | REVA Photography Studio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0b0b0b;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 30px 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #d4af37;
+            text-decoration: none;
+            margin-bottom: 25px;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .heading h1 {
+            color: #d4af37;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .heading p {
+            color: #bbbbbb;
+        }
+
+        .profile-card {
+            background: #171717;
+            border: 1px solid #8d7426;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .profile-top {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .avatar {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            background: #d4af37;
+            color: #111111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        .profile-top h2 {
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .profile-top p {
+            color: #d4af37;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #d4af37;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #444444;
+            border-radius: 7px;
+            background: #0d0d0d;
+            color: #ffffff;
+            font-size: 15px;
+        }
+
+        input:disabled {
+            background: #222222;
+            color: #bbbbbb;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        button {
+            padding: 12px 22px;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        #editBtn, #saveBtn {
+            background: #d4af37;
+            color: #111111;
+        }
+
+        #cancelBtn {
+            background: #333333;
+            color: #ffffff;
+            border: 1px solid #777777;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        #message {
+            margin-top: 20px;
+            color: #d4af37;
+            line-height: 1.5;
+            overflow-wrap: anywhere;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        @media (max-width: 500px) {
+            .profile-card {
+                padding: 20px;
+            }
+
+            .heading h1 {
+                font-size: 27px;
+            }
+
+            .buttons button {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="customer-dashboard.html" class="back-link">
+            ← Back to Dashboard
+        </a>
+
+        <div class="heading">
+            <h1>MY PROFILE</h1>
+            <p>Manage your personal information</p>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="profile-top">
+                <div class="avatar" id="avatar">C</div>
+                <h2 id="displayName">Customer</h2>
+                <p>REVA Photography Studio</p>
+            </div>
+
+            <form id="profileForm">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                        required
+                        disabled
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Your registered email"
+                        disabled
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        disabled
+                    >
+                </div>
+
+                <div class="buttons">
+                    <button type="button" id="editBtn">
+                        Edit Profile
+                    </button>
+
+                    <button type="submit" id="saveBtn" hidden>
+                        Save Changes
+                    </button>
+
+                    <button type="button" id="cancelBtn" hidden>
+                        Cancel
+                    </button>
+                </div>
+
+                <p id="message" role="status" aria-live="polite"></p>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="my-profile.js"></script>
+
+</body>
+</html>

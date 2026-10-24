@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Reva Photography Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <!-- LEFT SIDE -->
+        <div class="login-left">
+
+            <div class="brand">
+
+                <div class="brand-logo">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+
+                <h1>REVA</h1>
+                <p>PHOTOGRAPHY STUDIO</p>
+
+            </div>
+
+
+            <div class="left-content">
+
+                <span>CAPTURE • CREATE • REMEMBER</span>
+
+                <h2>
+                    Your Moments.<br>
+                    <em>Our Lens.</em>
+                </h2>
+
+                <p>
+                    Welcome to Reva Photography Studio.
+                    Manage your bookings, events and memories
+                    from one place.
+                </p>
+
+            </div>
+
+
+            <div class="copyright">
+                © 2026 Reva Photography Studio
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="login-right">
+
+            <div class="login-card">
+
+                <div class="profile-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+
+                <div class="login-title">
+
+                    <span>WELCOME BACK</span>
+
+                    <h2>Login</h2>
+
+                    <p>
+                        Access your photography studio account
+                    </p>
+
+                </div>
+
+
+                <!-- LOGIN FORM -->
+                <form id="loginForm">
+
+                    <!-- EMAIL -->
+                    <div class="input-group">
+
+                        <label>Email Address</label>
+
+                        <div class="input-box">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="input-group">
+
+                        <label>Password</label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                required>
+
+                            <i
+                                class="fa-regular fa-eye eye"
+                                onclick="togglePassword()">
+                            </i>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OPTIONS -->
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input type="checkbox">
+
+                            Remember me
+
+                        </label>
+
+
+                        <a href="#">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+                    <button
+                        type="submit"
+                        class="login-btn">
+
+                        LOGIN
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+                    <script>
+function togglePassword() {
+    const password = document.getElementById("password");
+    password.type =
+        password.type === "password" ? "text" : "password";
+}
+
+const API_URL = "http://localhost:5500/api";
+
+document.getElementById("loginForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    try {
+        const response = await fetch(`${API_URL}/login`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, password })
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            alert(result.message || "Login failed!");
+            return;
+        }
+
+        if (!result.user) {
+            alert("User information was not returned by the server.");
+            return;
+        }
+
+        sessionStorage.setItem(
+            "loggedInUser",
+            JSON.stringify(result.user)
+        );
+
+        alert("Login Successful!");
+
+        const role = result.user.role.toLowerCase();
+
+        if (role === "admin") {
+            window.location.href = "admin.html";
+        } else if (role === "customer") {
+            window.location.href = "customer-dashboard.html";
+        } else if (role === "photographer") {
+            window.location.href = "photographer.html";
+        } else if (role === "editor") {
+            window.location.href = "editor.html";
+        } else {
+            alert("Unknown user role: " + result.user.role);
+        }
+
+    } catch (error) {
+        console.error("Login error:", error);
+        alert("Server connection error! Check the backend and browser console.");
+    }
+});
+</script>
+                </form>
+
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+
+                <p class="signup-text">
+
+                    Don't have an account?
+
+                    <a href="#">
+                        Create Account
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // SHOW / HIDE PASSWORD
+        function togglePassword() {
+
+            const password =
+                document.getElementById("password");
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+            } else {
+
+                password.type = "password";
+
+            }
+
+
+        }
+// LOGIN
+        document.querySelector("form").addEventListener("submit", async function(event) {
+
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            try {
+
+                const response = await fetch("http://localhost:5500/api/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    sessionStorage.SETiTEM("loggedInUser", JSON.stringify(result.user));
+
+                    alert("Login Successful!");
+
+                    if (result.user.role === "admin") {
+                        window.location.href = "admin.html";
+
+                    } else if (result.user.role === "customer") {
+                        window.location.href = "customer-dashboard.html";
+
+                    } else if (result.user.role === "photographer") {
+                        window.location.href = "photographer.html";
+
+                    } else if (result.user.role === "editor") {
+                        window.location.href = "editor.html";
+                    }
+
+                } else {
+
+                    alert(result.message);
+
+                }
+
+            } catch (error) {
+
+                alert("Server connection error!");
+                console.log(error);
+
+            }
+
+        });
+
+
+    </script>
+<script>
+document.getElementById("loginForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    try {
+        const response = await fetch("http://localhost:5500/api/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            alert(data.message || "Login failed");
+            return;
+        }
+
+        localStorage.setItem("loggedInUser", JSON.stringify(data.user));
+
+        if (data.user.role === "customer") {
+            window.location.href = "customer-dashboard.html";
+        } else {
+            alert("Login successful!");
+        }
+
+    } catch (error) {
+        console.error("Login error:", error);
+        alert("Server connection failed. Please check your backend.");
+    }
+});
+</script>
+</body>
+</html>

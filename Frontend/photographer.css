@@ -373,8 +373,11 @@ body {
 }
 
 .days .event-day {
+    background: #c29a43;
+    color: #111;
     border: 2px solid #c29a43;
     font-weight: bold;
+    border-radius: 8px;
 }
 
 

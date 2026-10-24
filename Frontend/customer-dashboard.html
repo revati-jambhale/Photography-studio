@@ -1,629 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Customer Dashboard | Reva Studio</title>
-
-    <link rel="stylesheet" href="customer-dashboard.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Portal | Reva Photography Studio</title>
+  <link rel="stylesheet" href="customer-dashboard.css">
 </head>
-
 <body>
+  <div class="portal">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">R</span>
+        <span><strong>REVA</strong><small>PHOTOGRAPHY STUDIO</small></span>
+      </a>
 
-<div class="dashboard">
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-
-        <div class="brand">
-            <div class="brand-logo">R</div>
-
-            <div>
-                <h2>REVA</h2>
-                <span>PHOTOGRAPHY STUDIO</span>
-            </div>
+      <div class="customer-mini">
+        <div class="avatar" id="sideAvatar">C</div>
+        <div>
+          <strong id="sideName">Customer</strong>
+          <small>Customer Account</small>
         </div>
+      </div>
 
+      <nav class="nav" aria-label="Customer navigation">
+        <a class="nav-link active" href="#dashboard" data-section="dashboard"><span>▦</span> Dashboard</a>
+        <a class="nav-link" href="#profile" data-section="profile"><span>◉</span> My Profile</a>
+        <a class="nav-link" href="#packages" data-section="packages"><span>▧</span> Packages</a>
+        <a class="nav-link" href="#enquiries" data-section="enquiries"><span>✉</span> Enquiries & Quotations</a>
+        <a class="nav-link" href="#bookings" data-section="bookings"><span>▣</span> My Bookings</a>
+        <a class="nav-link" href="#payments" data-section="payments"><span>₹</span> Payments</a>
+      </nav>
 
-        <div class="profile-mini">
-            <div class="profile-circle">R</div>
-
-            <div>
-                <h3>Revati Jambhale</h3>
-                <p>Customer</p>
-            </div>
-        </div>
-
-
-        <nav>
-
-            <a href="#" class="active">
-                <span>⌂</span>
-                Dashboard
-            </a>
-
-            <a href="#">
-                <span>◉</span>
-                My Profile
-            </a>
-
-            <a href="#">
-                <span>▣</span>
-                My Bookings
-            </a>
-
-            <a href="#">
-                <span>◷</span>
-                Upcoming Events
-            </a>
-
-            <a href="#">
-                <span>₹</span>
-                Payments
-            </a>
-
-            <a href="#">
-                <span>▧</span>
-                Gallery
-            </a>
-
-            <a href="#">
-                <span>✓</span>
-                Past Events
-            </a>
-
-        </nav>
-
-
-        <div class="sidebar-bottom">
-
-            <a href="#">
-                ⚙ Settings
-            </a>
-
-            <a href="#">
-                ↪ Logout
-            </a>
-
-        </div>
-
+      <button class="logout-btn" id="logoutBtn" type="button">↪ <span>Logout</span></button>
+      <p class="sidebar-foot">© 2026 Reva Studio</p>
     </aside>
 
-
-
-    <!-- MAIN CONTENT -->
     <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
+        <div>
+          <p class="eyebrow">CUSTOMER SPACE</p>
+          <h1 id="pageTitle">Dashboard</h1>
+        </div>
+        <div class="top-actions">
+          <span class="status-pill"><i></i> Account active</span>
+          <div class="top-avatar" id="topAvatar">C</div>
+        </div>
+      </header>
 
-        <!-- TOP BAR -->
+      <section class="page-section active" id="dashboard">
+        <div class="welcome-panel">
+          <div>
+            <p class="eyebrow gold-text">WELCOME BACK</p>
+            <h2>Hello, <span id="welcomeName">Customer</span> ✨</h2>
+            <p>Keep track of your photography journey in one place.</p>
+          </div>
+          <a class="btn btn-gold" href="#packages" data-section="packages">Explore Packages <span>→</span></a>
+          <div class="welcome-orb" aria-hidden="true">✦</div>
+        </div>
 
-        <header class="topbar">
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-icon">▣</span>
+            <p>Total Bookings</p>
+            <strong id="totalBookings">0</strong>
+            <small>All your booking requests</small>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon">₹</span>
+            <p>Amount Paid</p>
+            <strong id="amountPaid">₹0</strong>
+            <small>Payments recorded here</small>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon">◈</span>
+            <p>Pending Amount</p>
+            <strong id="pendingAmount">₹0</strong>
+            <small>Balance on recorded bookings</small>
+          </article>
+        </div>
 
+        <div class="content-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">YOUR SCHEDULE</p>
+                <h3>Recent Bookings</h3>
+              </div>
+              <a href="#bookings" data-section="bookings" class="text-link">View all →</a>
+            </div>
+            <div id="recentBookings" class="booking-list">
+              <div class="empty-state">Your bookings will appear here after you add them.</div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">QUICK ACCESS</p>
+                <h3>Studio Services</h3>
+              </div>
+            </div>
+            <div class="quick-list">
+              <a href="#packages" data-section="packages">
+                <span>01</span>
+                <div><strong>Browse packages</strong><small>Find a service for your event</small></div>
+                <b>→</b>
+              </a>
+              <a href="#enquiries" data-section="enquiries">
+                <span>02</span>
+                <div><strong>Send an enquiry</strong><small>Ask about availability and price</small></div>
+                <b>→</b>
+              </a>
+              <a href="#payments" data-section="payments">
+                <span>03</span>
+                <div><strong>Check payments</strong><small>Review recorded amounts</small></div>
+                <b>→</b>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <p class="note">Booking, payment and delivery records will need backend integration to load from the database.</p>
+      </section>
+
+      <section class="page-section" id="profile">
+        <div class="section-intro">
+          <p class="eyebrow">YOUR ACCOUNT</p>
+          <h2>My Profile</h2>
+          <p>Keep your contact details up to date.</p>
+        </div>
+
+        <article class="panel profile-panel">
+          <div class="profile-banner">
+            <div class="profile-avatar" id="profileAvatar">C</div>
             <div>
-                <p class="eyebrow">CUSTOMER PORTAL</p>
-
-                <h1>Welcome back, Revati</h1>
-
-                <p class="sub-text">
-                    Manage your bookings, events and memories.
-                </p>
+              <h3 id="profileDisplayName">Customer</h3>
+              <p>Customer account</p>
             </div>
+            <span class="profile-tag">PROFILE</span>
+          </div>
 
+          <form id="profileForm" class="form-grid">
+            <label>Full name
+              <input id="profileName" name="name" required maxlength="80" placeholder="Enter your full name" disabled>
+            </label>
+            <label>Email address
+              <input id="profileEmail" name="email" type="email" required placeholder="you@example.com" disabled>
+            </label>
+            <label>Phone number
+              <input id="profilePhone" name="phone" type="tel" maxlength="20" placeholder="Enter phone number" disabled>
+            </label>
 
-            <div class="top-profile">
-
-                <div class="notification">
-                    ♡
-                </div>
-
-                <div class="top-avatar">
-                    R
-                </div>
-
-                <div>
-                    <h3>Revati</h3>
-                    <p>Customer</p>
-                </div>
-
+            <div class="form-actions">
+              <button class="btn btn-outline" id="editProfileBtn" type="button">Edit details</button>
+              <button class="btn btn-gold" id="saveProfileBtn" type="submit" hidden>Save changes</button>
+              <button class="btn btn-muted" id="cancelProfileBtn" type="button" hidden>Cancel</button>
             </div>
+            <p class="form-message" id="profileMessage" aria-live="polite"></p>
+          </form>
+        </article>
+      </section>
 
-        </header>
+      <section class="page-section" id="packages">
+        <div class="section-intro">
+          <p class="eyebrow">CAPTURE YOUR MOMENTS</p>
+          <h2>Photography Packages</h2>
+          <p>Choose a service, then send an enquiry to discuss your event.</p>
+        </div>
 
+        <div class="package-grid">
+          <article class="package-card">
+            <span class="package-number">01 / WEDDING</span>
+            <div class="package-art wedding-art">✦</div>
+            <h3>Wedding Photography</h3>
+            <p>Beautifully documented moments from your special day.</p>
+            <button class="btn btn-outline enquire-package" data-package="Wedding Photography" type="button">Enquire now →</button>
+          </article>
 
+          <article class="package-card">
+            <span class="package-number">02 / PRE-WEDDING</span>
+            <div class="package-art pre-art">♡</div>
+            <h3>Pre-Wedding Shoot</h3>
+            <p>A personal story captured in a location of your choice.</p>
+            <button class="btn btn-outline enquire-package" data-package="Pre-Wedding Shoot" type="button">Enquire now →</button>
+          </article>
 
-        <!-- SUMMARY CARDS -->
+          <article class="package-card">
+            <span class="package-number">03 / CELEBRATION</span>
+            <div class="package-art birthday-art">✧</div>
+            <h3>Birthday Photography</h3>
+            <p>Keep the smiles, details and celebration memories.</p>
+            <button class="btn btn-outline enquire-package" data-package="Birthday Photography" type="button">Enquire now →</button>
+          </article>
 
-        <section class="summary">
+          <article class="package-card">
+            <span class="package-number">04 / EVENTS</span>
+            <div class="package-art event-art">◈</div>
+            <h3>Event Photography</h3>
+            <p>Photography and videography for your important events.</p>
+            <button class="btn btn-outline enquire-package" data-package="Event Photography / Videography" type="button">Enquire now →</button>
+          </article>
+        </div>
+      </section>
 
-            <div class="summary-card">
+      <section class="page-section" id="enquiries">
+        <div class="section-intro">
+          <p class="eyebrow">LET'S PLAN IT</p>
+          <h2>Enquiries & Quotations</h2>
+          <p>Tell the studio about your event and preferred service.</p>
+        </div>
 
-                <div class="gold-icon">
-                    ▣
-                </div>
+        <div class="content-grid">
+          <article class="panel">
+            <h3>New Enquiry</h3>
+            <form id="enquiryForm" class="form-grid">
+              <label>Event / service
+                <select id="enquiryPackage" required>
+                  <option value="">Select a service</option>
+                  <option>Wedding Photography</option>
+                  <option>Pre-Wedding Shoot</option>
+                  <option>Birthday Photography</option>
+                  <option>Event Photography / Videography</option>
+                  <option>Custom Package</option>
+                </select>
+              </label>
 
-                <div>
-                    <p>ACTIVE BOOKINGS</p>
-                    <h2>02</h2>
-                </div>
+              <label>Event date
+                <input id="enquiryDate" type="date" required>
+              </label>
 
+              <label>Venue / location
+                <input id="enquiryVenue" maxlength="160" placeholder="Event location" required>
+              </label>
+
+              <label>Message
+                <textarea id="enquiryMessage" rows="4" maxlength="1000" placeholder="Tell us about your event"></textarea>
+              </label>
+
+              <button class="btn btn-gold" type="submit">Submit enquiry →</button>
+              <p class="form-message" id="enquiryFeedback" aria-live="polite"></p>
+            </form>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <h3>Your Enquiries</h3>
+              <span class="small-label">LOCAL RECORDS</span>
             </div>
-
-
-            <div class="summary-card">
-
-                <div class="gold-icon">
-                    ◷
-                </div>
-
-                <div>
-                    <p>UPCOMING EVENTS</p>
-                    <h2>03</h2>
-                </div>
-
+            <div id="enquiryList" class="record-list">
+              <div class="empty-state">No enquiries yet.</div>
             </div>
+            <p class="note">Quotation amounts and statuses appear here once provided by the studio.</p>
+          </article>
+        </div>
+      </section>
 
+      <section class="page-section" id="bookings">
+        <div class="section-intro">
+          <p class="eyebrow">YOUR RESERVATIONS</p>
+          <h2>My Bookings</h2>
+          <p>Review your event date, venue and booking status.</p>
+        </div>
 
-            <div class="summary-card">
+        <div class="panel">
+          <div class="panel-heading">
+            <h3>Booking records</h3>
+            <button class="btn btn-gold btn-small" id="newBookingBtn" type="button">+ Add booking request</button>
+          </div>
 
-                <div class="gold-icon">
-                    ₹
-                </div>
+          <form id="bookingForm" class="form-grid compact-form" hidden>
+            <label>Customer Name
+  <input id="bookingCustomerName" type="text" placeholder="Enter Customer Name" required>
+</label>
+            <label>Service
+              <select id="bookingPackage" required>
+                <option value="">Select a service</option>
+                <option>Wedding Photography</option>
+                <option>Pre-Wedding Shoot</option>
+                <option>Birthday Photography</option>
+                <option>Event Photography / Videography</option>
+                <option>Custom Package</option>
+              </select>
+            </label>
 
-                <div>
-                    <p>TOTAL PAID</p>
-                    <h2>₹15,000</h2>
-                </div>
+            <label>Event date
+              <input id="bookingDate" type="date" required>
+            </label>
 
+            <label>Event time
+              <input id="bookingTime" type="time" required>
+            </label>
+
+            <label>Venue
+              <input id="bookingVenue" required maxlength="160" placeholder="Event venue">
+            </label>
+
+            <div class="form-actions">
+              <button class="btn btn-gold" type="submit">Save request</button>
+              <button class="btn btn-muted" id="cancelBookingBtn" type="button">Cancel</button>
             </div>
-
-
-            <div class="summary-card">
-
-                <div class="gold-icon">
-                    ✓
-                </div>
-
-                <div>
-                    <p>PAST EVENTS</p>
-                    <h2>05</h2>
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- FIRST ROW -->
-
-        <section class="grid-two">
-
-
-            <!-- ACTIVE BOOKINGS -->
-
-            <div class="panel">
-
-                <div class="panel-heading">
-
-                    <div>
-                        <p class="section-label">
-                            BOOKINGS
-                        </p>
-
-                        <h2>Active Bookings</h2>
-                    </div>
-
-                    <button class="gold-button">
-                        + Book Now
-                    </button>
-
-                </div>
-
-
-                <!-- BOOKING 1 -->
-
-                <div class="booking">
-
-                    <div class="event-image wedding">
-                        W
-                    </div>
-
-
-                    <div class="booking-info">
-
-                        <h3>Wedding Photography</h3>
-
-                        <p>
-                            15 October 2026
-                        </p>
-
-                        <p>
-                            Kolhapur
-                        </p>
-
-                    </div>
-
-
-                    <span class="confirmed">
-                        Confirmed
-                    </span>
-
-                </div>
-
-
-
-                <!-- BOOKING 2 -->
-
-                <div class="booking">
-
-                    <div class="event-image birthday">
-                        B
-                    </div>
-
-
-                    <div class="booking-info">
-
-                        <h3>Birthday Photography</h3>
-
-                        <p>
-                            20 October 2026
-                        </p>
-
-                        <p>
-                            Kolhapur
-                        </p>
-
-                    </div>
-
-
-                    <span class="pending">
-                        Pending
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PAYMENT -->
-
-            <div class="panel payment">
-
-                <p class="section-label">
-                    PAYMENT
-                </p>
-
-                <h2>Payment Summary</h2>
-
-
-                <div class="payment-total">
-
-                    <p>Total Amount</p>
-
-                    <h1>₹25,000</h1>
-
-                </div>
-
-
-                <div class="payment-row">
-
-                    <div>
-                        <span>Paid</span>
-                        <strong>₹15,000</strong>
-                    </div>
-
-                    <div>
-                        <span>Remaining</span>
-                        <strong>₹10,000</strong>
-                    </div>
-
-                </div>
-
-
-                <div class="progress">
-
-                    <div></div>
-
-                </div>
-
-
-                <button class="pay-button">
-                    Make Payment
-                </button>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- SECOND ROW -->
-
-        <section class="grid-two">
-
-
-            <!-- UPCOMING EVENTS -->
-
-            <div class="panel">
-
-                <div class="panel-heading">
-
-                    <div>
-
-                        <p class="section-label">
-                            SCHEDULE
-                        </p>
-
-                        <h2>Upcoming Events</h2>
-
-                    </div>
-
-                    <a href="#" class="view-all">
-                        View All
-                    </a>
-
-                </div>
-
-
-
-                <div class="event-row">
-
-                    <div class="date">
-                        <strong>20</strong>
-                        <span>OCT</span>
-                    </div>
-
-
-                    <div class="event-details">
-
-                        <h3>Birthday Event</h3>
-
-                        <p>
-                            Photography • Kolhapur
-                        </p>
-
-                    </div>
-
-
-                    <button class="view-button">
-                        View
-                    </button>
-
-                </div>
-
-
-
-                <div class="event-row">
-
-                    <div class="date">
-                        <strong>25</strong>
-                        <span>OCT</span>
-                    </div>
-
-
-                    <div class="event-details">
-
-                        <h3>Wedding Event</h3>
-
-                        <p>
-                            Photography • Hupari
-                        </p>
-
-                    </div>
-
-
-                    <button class="view-button">
-                        View
-                    </button>
-
-                </div>
-
-
-
-                <div class="event-row">
-
-                    <div class="date">
-                        <strong>02</strong>
-                        <span>NOV</span>
-                    </div>
-
-
-                    <div class="event-details">
-
-                        <h3>Pre-Wedding Shoot</h3>
-
-                        <p>
-                            Photography • Kolhapur
-                        </p>
-
-                    </div>
-
-
-                    <button class="view-button">
-                        View
-                    </button>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PROFILE -->
-
-            <div class="panel profile-panel">
-
-                <p class="section-label">
-                    MY PROFILE
-                </p>
-
-
-                <div class="large-profile">
-                    R
-                </div>
-
-
-                <h2>Revati Jambhale</h2>
-
-                <p class="customer">
-                    Customer
-                </p>
-
-
-                <div class="profile-info">
-
-                    <div>
-                        <span>PHONE</span>
-                        <strong>+91 XXXXX XXXXX</strong>
-                    </div>
-
-                    <div>
-                        <span>EMAIL</span>
-                        <strong>revati@email.com</strong>
-                    </div>
-
-                </div>
-
-
-                <button class="outline-button">
-                    Edit Profile
-                </button>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- BOTTOM ROW -->
-
-        <section class="grid-two">
-
-
-            <!-- PAST EVENTS -->
-
-            <div class="panel">
-
-                <div class="panel-heading">
-
-                    <div>
-
-                        <p class="section-label">
-                            HISTORY
-                        </p>
-
-                        <h2>Past Events</h2>
-
-                    </div>
-
-                    <a href="#" class="view-all">
-                        View All
-                    </a>
-
-                </div>
-
-
-
-                <div class="past-event">
-
-                    <div class="check">
-                        ✓
-                    </div>
-
-
-                    <div class="past-info">
-
-                        <h3>
-                            Wedding Photography
-                        </h3>
-
-                        <p>
-                            12 September 2026
-                            • ₹15,000
-                        </p>
-
-                    </div>
-
-
-                    <button class="view-button">
-                        Details
-                    </button>
-
-                </div>
-
-
-
-                <div class="past-event">
-
-                    <div class="check">
-                        ✓
-                    </div>
-
-
-                    <div class="past-info">
-
-                        <h3>
-                            Birthday Photography
-                        </h3>
-
-                        <p>
-                            05 August 2026
-                            • ₹8,000
-                        </p>
-
-                    </div>
-
-
-                    <button class="view-button">
-                        Details
-                    </button>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- FINAL MEDIA -->
-
-            <div class="panel media-panel">
-
-                <div class="media-icon">
-                    ▧
-                </div>
-
-
-                <div class="media-content">
-
-                    <p class="section-label">
-                        YOUR MEMORIES
-                    </p>
-
-                    <h2>
-                        Final Photos & Videos
-                    </h2>
-
-                    <p>
-                        Your edited photos and videos
-                        are ready to view.
-                    </p>
-
-                </div>
-
-
-                <button class="gold-button">
-                    View Gallery
-                </button>
-
-            </div>
-
-        </section>
-
-
-    </main>
+            <p class="form-message" id="bookingFeedback" aria-live="polite"></p>
+          </form>
+
+          <div id="bookingList" class="table-list">
+            <div class="empty-state">No bookings yet. Use “Add booking request” to create one.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section" id="payments">
+        <div class="section-intro">
+          <p class="eyebrow">PAYMENT TRACKER</p>
+          <h2>Payments</h2>
+          <p>Track advances, paid amounts and remaining balances.</p>
+        </div>
+
+        <div class="stats-grid payment-stats">
+          <article class="stat-card"><p>Total paid</p><strong id="paymentPaid">₹0</strong></article>
+          <article class="stat-card"><p>Remaining balance</p><strong id="paymentDue">₹0</strong></article>
+          <article class="stat-card"><p>Recorded bookings</p><strong id="paymentBookings">0</strong></article>
+        </div>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <h3>Payment records</h3>
+            <span class="small-label">VIEW ONLY</span>
+          </div>
+          <div id="paymentList" class="table-list">
+            <div class="empty-state">No payment records yet.</div>
+          </div>
+          <p class="note">This page does not collect payments. Payment details must be added through the studio's authorized workflow.</p>
+        </article>
+      </section>
 
 </div>
+      <section class="page-section" id="delivery">
+        <div class="section-intro">
+          <p class="eyebrow">PROJECT PROGRESS</p>
+          <h2>Delivery Status</h2>
+          <p>Follow the stages of your photography project.</p>
+        </div>
 
+        <div class="panel">
+          <div class="workflow">
+            <div class="workflow-step done"><span>✓</span><div><strong>Shoot scheduled</strong><small>Event details confirmed by studio</small></div></div>
+            <div class="workflow-step"><span>2</span><div><strong>Shoot completed</strong><small>Photos/videos captured</small></div></div>
+            <div class="workflow-step"><span>3</span><div><strong>Editing</strong><small>Media is being edited</small></div></div>
+            <div class="workflow-step"><span>4</span><div><strong>Review</strong><small>Preview ready for customer review</small></div></div>
+            <div class="workflow-step"><span>5</span><div><strong>Final delivery</strong><small>Final album/video shared</small></div></div>
+          </div>
+          <p class="note">These stages are examples until actual booking status is connected.</p>
+        </div>
+      </section>
+
+      <section class="page-section" id="notifications">
+        <div class="section-intro">
+          <p class="eyebrow">STAY UPDATED</p>
+          <h2>Notifications</h2>
+          <p>Important updates related to your account and events.</p>
+        </div>
+
+        <div class="panel">
+          <div id="notificationList" class="record-list">
+            <div class="empty-state">You're all caught up. Studio notifications will appear here when connected.</div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="main-footer">
+        <span>REVA PHOTOGRAPHY STUDIO</span>
+        <span>Moments that stay forever.</span>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="customer-dashboard.js"></script>
 </body>
 </html>

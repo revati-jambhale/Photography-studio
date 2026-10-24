@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages Management | Reva Photography Studio</title>
+    <link rel="stylesheet" href="packages.css">
+</head>
+<body>
+
+    <header>
+        <h1>REVA <span>PHOTOGRAPHY STUDIO</span></h1>
+        <p>Packages Management</p>
+    </header>
+
+    <main class="container">
+        <div class="page-heading">
+            <div>
+                <h2>Photography Packages</h2>
+                <p>Manage your studio packages</p>
+            </div>
+            <button id="showFormBtn">+ Add Package</button>
+        </div>
+
+        <section id="packageFormSection" class="form-card" hidden>
+            <h3 id="formTitle">Add New Package</h3>
+
+            <form id="packageForm">
+                <input type="hidden" id="packageId">
+
+                <label for="packageName">Package Name</label>
+                <input type="text" id="packageName" required>
+
+                <label for="packageDescription">Description</label>
+                <textarea id="packageDescription" required></textarea>
+
+                <label for="packagePrice">Price (₹)</label>
+                <input type="number" id="packagePrice" min="0" required>
+
+                <label for="packageDuration">Duration</label>
+                <input type="text" id="packageDuration"
+                       placeholder="e.g. 6 hours" required>
+
+                <label for="packageServices">Services Included</label>
+                <textarea id="packageServices"
+                          placeholder="Photography, Videography..."
+                          required></textarea>
+
+                <div class="form-actions">
+                    <button type="submit" id="saveBtn">Save Package</button>
+                    <button type="button" id="cancelBtn">Cancel</button>
+                </div>
+
+                <p id="packageMessage" role="status"></p>
+            </form>
+        </section>
+
+        <section class="table-card">
+            <h3>All Packages</h3>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Package</th>
+                            <th>Price</th>
+                            <th>Duration</th>
+                            <th>Services</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="packagesTable">
+                        <tr>
+                            <td colspan="5">Loading packages...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="packages.js"></script>
+</body>
+</html>
